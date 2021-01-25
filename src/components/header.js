@@ -11,9 +11,39 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
+
+   //defining the elements
+   const newsHead = document.createElement('div');
+   const newsDate = document.createElement('span');
+   const newsTitle = document.createElement('h1');
+   const newsTemp = document.createElement('span')
+
+   //adding classes
+   newsHead.classList.add('header')
+   newsDate.classList.add('date')
+   newsTemp.classList.add('temp')
+
+
+   //appending 
+   newsHead.append(newsDate);
+   newsHead.append(newsTitle);
+   newsHead.append(newsTemp);
+
+
+   //content
+   newsDate.textContent = 'March 28th 2019';
+   newsTitle.textContent = 'Lambda Times';
+   newsTemp.textContent = '98°';
+
+   newsHead.appendChild(newsDate);
+   newsHead.appendChild(newsTitle);
+   newsHead.appendChild(newsTemp);
+
+   //other
+   return newsHead;
 }
 
-const headerAppender = (selector) => {
+const headerAppender = (newsHead) => {
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
